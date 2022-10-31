@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const pageRoute = require('../smartEdu/routes/pageRoute');
 const courseRoute = require('../smartEdu/routes/courseRoute');
-
+const categoryRoute = require('../smartEdu/routes/categoryRoute');
+const userRoute = require('../smartEdu/routes/userRoute');
 
 const app = express();
 
@@ -23,7 +24,8 @@ app.use(express.static("public"));
 // routes
 app.use("/", pageRoute);
 app.use("/courses", courseRoute);
-
+app.use("/categories", categoryRoute);
+app.use("/user", userRoute);
 
 app.listen(3000,()=>{
     console.log("server 3000 portunda calisti");
